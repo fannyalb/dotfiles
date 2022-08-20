@@ -1,0 +1,18 @@
+#!/bin/sh
+
+DIR_OF_FILE=$(dirname "$0")
+DOTFILES="$(cd ${DIR_OF_FILE} && pwd)"
+
+# vim folder
+VIM_FOLDER="$HOME/.vim"
+if [ -f "VIM_FOLDER" ]; then
+	mv "$VIM_FOLDER" "$VIM_FOLDER-OLD"
+fi
+ln -s $DOTFILES/vim $VIM_FOLDER
+
+
+VIMRC_FILE="$HOME/.vimrc"
+if [ -f "VIMRC_FILE" ]; then
+	mv "$VIMRC_FILE" "$VIMRC_FILE-OLD"
+fi
+ln -s $DOTFILES/vim/vimrc $VIMRC_FILE

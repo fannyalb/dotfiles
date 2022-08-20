@@ -1,0 +1,35 @@
+" Plugins
+" --------------
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+call vundle#end()
+
+" ------
+" General
+" ------
+colorscheme peachpuff
+syntax on					" syntax highlighting
+filetype plugin indent on	" use file type plugin
+
+
+" ------
+" General set
+" ------
+set number			" show linenumbers
+set shiftwidth=4	" number of spaces to use on autoindenting
+set tabstop=4		" tab is 4 spaces
+set shiftround		" use multiple of shiftwidth when indenting with < and > 
+set autoindent		" always set autoindenting on
+
+" ------
+" Keymaps
+" ------
+nnoremap ; :
+nnoremap : ;
+
