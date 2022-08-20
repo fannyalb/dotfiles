@@ -22,6 +22,7 @@ filetype plugin indent on	" use file type plugin
 " General set
 " ------
 set number			" show linenumbers
+set relativenumber	" show relative linenumbers
 set shiftwidth=4	" number of spaces to use on autoindenting
 set tabstop=4		" tab is 4 spaces
 set shiftround		" use multiple of shiftwidth when indenting with < and > 
@@ -32,4 +33,8 @@ set autoindent		" always set autoindenting on
 " ------
 nnoremap ; :
 nnoremap : ;
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-H> <C-W><C-H>
 
