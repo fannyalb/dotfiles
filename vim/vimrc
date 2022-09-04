@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'preservim/nerdtree'
 call vundle#end()
 
 " ------
@@ -33,8 +34,20 @@ set autoindent		" always set autoindenting on
 " ------
 nnoremap ; :
 nnoremap : ;
+
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-H> <C-W><C-H>
 
+" https://github.com/preservim/nerdtree
+nnoremap <C-t> :NERDTreeToggle<CR>
+
+"""
+"Other"
+"""
+" Skeletons
+augroup skeletons
+	au!
+	autocmd BufNewFile *.* silent! execute '0r ~/.vim/templates/skeleton.'.expand("<afile>:e")
+augroup END
