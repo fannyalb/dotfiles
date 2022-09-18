@@ -10,11 +10,14 @@ source ~/.vim/plugins/vim-airline.vim
 source ~/.vim/plugins/vim-ragtag.vim
 source ~/.vim/plugins/vim-commentary.vim
 source ~/.vim/plugins/vim-surround.vim
+source ~/.vim/plugins/vim-unimpaired.vim
 source ~/.vim/plugins/nerdtree.vim
 call vundle#end()
 
+
 " ----------------------------
-" ------
+" General 
+" ----------------------------
 colorscheme peachpuff
 syntax on					" syntax highlighting
 filetype plugin indent on	" use file type plugin
@@ -36,6 +39,7 @@ set listchars=tab:>\ ,trail:·
 set splitright
 set scrolloff=5
         
+
 " ----------------------------
 " Keymaps
 " ----------------------------
@@ -56,7 +60,7 @@ nnoremap <C-H> <C-W><C-H>
 " Reselect visual selection after indenting
 vnoremap < <gv
 vnoremap > >gv
-set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+
 
 
 " ----------------------------
