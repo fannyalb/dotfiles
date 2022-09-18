@@ -1,4 +1,4 @@
 vim/bundle/
 !vim/bundle/Vundle.vim
-.uuid
-*.un~
+**.uuid
+*~
