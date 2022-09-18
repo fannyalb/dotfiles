@@ -3,16 +3,31 @@
 DIR_OF_FILE=$(dirname "$0")
 DOTFILES="$(cd ${DIR_OF_FILE} && pwd)"
 
+replace_old_with_new () {
+	OLD_FILE="$1"
+	NEW_FILE="$2"
+	if [ -L "$OLD_FILE" ]; then
+		echo "Removing Symlink $OLD_FILE"
+		rm "$OLD_FILE"
+	fi
+	if [ -f "$OLD_FILE" ] || [ -d "$OLD_FILE" ]; then
+		echo "Moving $OLD_FILE to ${OLD_FILE}.OLD"
+		mv "$OLD_FILE" "${OLD_FILE}.OLD"
+	fi
+	echo "Creating Symlink $OLD_FILE for $NEW_FILE"
+	ln -s "$NEW_FILE" "$OLD_FILE"
+}
+
+
 # vim folder
-VIM_FOLDER="$HOME/.vim"
-if [ -f "VIM_FOLDER" ]; then
-	mv "$VIM_FOLDER" "$VIM_FOLDER-OLD"
-fi
-ln -s $DOTFILES/vim $VIM_FOLDER
+OLD_FILE="$HOME/.vim"
+NEW_FILE="$DOTFILES/vim"
+replace_old_with_new "$OLD_FILE" "$NEW_FILE"
 
+OLD_FILE="$HOME/.vimrc"
+NEW_FILE="$DOTFILES/vim/vimrc"
+replace_old_with_new "$OLD_FILE" "$NEW_FILE"
 
-VIMRC_FILE="$HOME/.vimrc"
-if [ -f "VIMRC_FILE" ]; then
-	mv "$VIMRC_FILE" "$VIMRC_FILE-OLD"
-fi
-ln -s $DOTFILES/vim/vimrc $VIMRC_FILE
+OLD_FILE="$HOME/.config/kitty"
+NEW_FILE="$DOTFILES/kitty"
+replace_old_with_new "$OLD_FILE" "$NEW_FILE"
