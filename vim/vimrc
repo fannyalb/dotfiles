@@ -12,6 +12,7 @@ source ~/.vim/plugins/vim-commentary.vim
 source ~/.vim/plugins/vim-surround.vim
 source ~/.vim/plugins/vim-unimpaired.vim
 source ~/.vim/plugins/nerdtree.vim
+source ~/.vim/plugins/ale.vim
 call vundle#end()
 
 
