@@ -6,33 +6,45 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
-Plugin 'preservim/nerdtree'
-Plugin 'tpope/vim-ragtag'
+source ~/.vim/plugins/vim-airline.vim
+source ~/.vim/plugins/vim-ragtag.vim
+source ~/.vim/plugins/vim-commentary.vim
+source ~/.vim/plugins/vim-surround.vim
+source ~/.vim/plugins/nerdtree.vim
 call vundle#end()
 
-" ------
-" General
+" ----------------------------
 " ------
 colorscheme peachpuff
 syntax on					" syntax highlighting
 filetype plugin indent on	" use file type plugin
 
 
-" ------
+" ----------------------------
 " General set
-" ------
+" ----------------------------
 set number			" show linenumbers
 set relativenumber	" show relative linenumbers
 set shiftwidth=4	" number of spaces to use on autoindenting
 set tabstop=4		" tab is 4 spaces
 set shiftround		" use multiple of shiftwidth when indenting with < and > 
 set autoindent		" always set autoindenting on
-
-" ------
+set undofile
+" set title      
+set signcolumn=auto
+set listchars=tab:>\ ,trail:·
+set splitright
+set scrolloff=5
+        
+" ----------------------------
 " Keymaps
-" ------
+" ----------------------------
+let mapleader ="\<space>"
+" Create file if it's not existing
+nnoremap gf :edit <cfile><cr>  
+" map <leader>ve :edit ~/.vimrc
+" Open current file in the default program
+map <leader>x :!xdg-open %<cr><cr>
 nnoremap ; :
 nnoremap : ;
 
@@ -41,12 +53,15 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-H> <C-W><C-H>
 
-" https://github.com/preservim/nerdtree
-nnoremap <C-t> :NERDTreeToggle<CR>
+" Reselect visual selection after indenting
+vnoremap < <gv
+vnoremap > >gv
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 
-"""
-"Other"
-"""
+
+" ----------------------------
+" Other
+" ----------------------------
 " Skeletons
 augroup skeletons
 	au!
