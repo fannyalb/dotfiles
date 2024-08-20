@@ -31,3 +31,7 @@ replace_old_with_new "$OLD_FILE" "$NEW_FILE"
 OLD_FILE="$HOME/.config/kitty"
 NEW_FILE="$DOTFILES/kitty"
 replace_old_with_new "$OLD_FILE" "$NEW_FILE"
+
+OLD_FILE="$HOME/.bashrc"
+NEW_FILE="$DOTFILES/bashrc"
+replace_old_with_new "$OLD_FILE" "$NEW_FILE"

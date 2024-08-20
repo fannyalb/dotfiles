@@ -6,7 +6,10 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-source ~/.vim/plugins/vim-airline.vim
+Plugin 'vim-airline/vim-airline'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'vim-scripts/indentpython'
 source ~/.vim/plugins/vim-ragtag.vim
 source ~/.vim/plugins/vim-commentary.vim
 source ~/.vim/plugins/vim-surround.vim
